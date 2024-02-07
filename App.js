@@ -1,4 +1,5 @@
-import { StatusBar, View, Text, SafeAreaView, Button, Alert, StyleSheet } from "react-native";
+import { StatusBar, View, Text, SafeAreaView, Alert, Pressable } from "react-native";
+import estilos from "./src/stylesheets/estilos";
 
 export default function App() {
   function vai() {
@@ -9,42 +10,24 @@ export default function App() {
       <StatusBar barStyle="light-content" />
       <SafeAreaView style={estilos.container}>
         <View style={estilos.cabecalho}>
-          <Text> Topo/Cabeçalho </Text>
+          <Text style={estilos.titulo}> React Native </Text>
         </View>
 
         <View  style={estilos.conteudo}>
-          <Text> Conteúdo </Text>
+          <Text style={estilos.paragrafos}> Pontapé inicial para o desenvolvimento mobile </Text>
+          <Text style={estilos.paragrafos}>
+            React Native é um framework de desenvolvimento de aplicativos móveis que permite a criação de aplicativos nativos para iOS e Android utilizando JavaScript e React. Desenvolvido e mantido pelo Facebook, React Native tornou-se uma escolha popular entre os desenvolvedores devido à sua abordagem eficiente e flexível para o desenvolvimento de aplicativos móveis multiplataforma.
+          </Text>
         </View>
 
         <View style={estilos.rodape}>
-          <Text> Rodapé </Text>
-          <Button title="Toca aqui" color="darkblue" onPress={vai} />
+          <Text style={estilos.rodapeTexto}> Rodapé </Text>
+          <Pressable style={estilos.botao} onPress={vai}>
+            <Text style={estilos.rodapeTexto}>Clique aqui</Text>
+          </Pressable>
         </View>
       </SafeAreaView>
       
     </>
   )
 }
-
-const estilos = StyleSheet.create({
-  container: {
-    backgroundColor: "#E4F7FF",
-    flex: 1,
-  },
-  cabecalho: {
-    backgroundColor: "#6BD3FF",
-    flex: 0.5,
-
-  }, 
-  conteudo: {
-    backgroundColor: "#51CBFF",
-    flex: 4,
-
-  }, 
-  rodape: {
-    backgroundColor: "#34C2FF",
-    flex: 0.5,
-
-  }
-
-});
